@@ -67,5 +67,17 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void check_total_order_value_added(){
+        float price;
+        restaurant.addToMenu("chicken 65", 250);
+        restaurant.addToMenu("chicken Biryani", 500);
+        ArrayList<String> items = new ArrayList<String>();
+        items.add("Sweet corn soup");
+        items.add("Vegetable lasagne");
+        items.add("chicken Biryani");
+        price=service.totalOrder(items,restaurant);
 
+        assertEquals(888,price);
+    }
 }
