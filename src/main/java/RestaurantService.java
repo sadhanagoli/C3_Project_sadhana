@@ -31,5 +31,14 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
+    public float totalOrder(ArrayList<String>items,Restaurant r){
+        float total_price=0f;
+        Item item_obj;
+        for(String item:items){
+            item_obj=r.getItemObj(item);
+            total_price=item_obj.getPrice()+total_price;
+        }
+        return total_price;
+    }
 
 }

@@ -98,5 +98,12 @@ public class Restaurant {
     public String getName() {
         return name;
     }
-
+    //added this as findItemByName() is private function
+    public Item getItemObj(String itemName){
+        if(itemName!=null){
+            return findItemByName(itemName);
+        }
+        else
+            return null;
+    }
 }

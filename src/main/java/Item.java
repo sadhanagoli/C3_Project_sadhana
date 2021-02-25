@@ -17,4 +17,9 @@ public class Item {
                 + "\n"
                 ;
     }
+    //added this function because price is private
+    public int getPrice(){
+
+        return price;
+    }
 }
